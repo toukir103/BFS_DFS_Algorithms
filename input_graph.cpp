@@ -151,21 +151,10 @@ void err( T arg, const rest &... r) {
  ///************************************** C O D E ************************************** ///
  ///-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ///
 
-
+ 
  
  vector<vector<int>> adj(200); 
-
- vector<bool> visited(200);
-
- void dfs(int node) {
-    visited[node] = true;
-    cout << node << " ";
-    for (int neighbor : adj[node]) {
-        if (!visited[neighbor]) {
-            dfs(neighbor);
-        }
-    }
-}
+ 
 
 int main() {
     optimize();
@@ -179,14 +168,15 @@ int main() {
         adj[v].push_back(u); 
     }
 
-//    for (int i = 1; i <= n; i++) { 
-//         cout << "Node " << i << ": ";
-//         for (int u: adj[i]) {
-//             cout << u << " ";
-//         }
-//         cout << endl;
-//     }
+   for (int i = 1; i <= n; i++) { 
+        cout << "Node " << i << ": ";
+        for (int u: adj[i]) {
+            cout << u << " ";
+        }
+        cout << endl;
+    }
 
-dfs(1);
+  
+
     return 0;
 }
